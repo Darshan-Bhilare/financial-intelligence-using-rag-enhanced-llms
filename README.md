@@ -1,4 +1,4 @@
-#Financial Intelligence using RAG-Enhanced LLMs: A Unified Explainable AI System for Indian Banking & Finance
+##Financial Intelligence using RAG-Enhanced LLMs: A Unified Explainable AI System for Indian Banking & Finance
 ## Stock Price Prediction and Risk Analysis  
 
 ---
