@@ -3,7 +3,7 @@
 
 ---
 
-## 📌 Problem Statement  
+## Problem Statement  
 
 Stock price forecasting is one of the most economically significant and technically challenging problems in applied machine learning.  
 
@@ -17,7 +17,7 @@ On the other hand, Large Language Models (LLMs) can process textual data but may
 
 ---
 
-## ✅ Proposed Solution  
+## Proposed Solution  
 
 This project combines:  
 
@@ -31,13 +31,13 @@ This ensures predictions are supported by:
 
 ---
 
-## 🚀 Project Overview  
+## Project Overview  
 
 This project is a hybrid AI forecasting system built on 22 years of data (2003–2025) for 5 major NSE stocks.  
 
 ---
 
-## 🔹 System Architecture  
+## System Architecture  
 
 The system integrates two main streams:  
 
@@ -47,7 +47,7 @@ The system integrates two main streams:
 - Feature engineering (technical indicators)  
 - Time-series models (LSTM / Transformer)  
 
-➡️ Output: Pattern-based price prediction  
+   Output: Pattern-based price prediction  
 
 ---
 
@@ -57,7 +57,7 @@ The system integrates two main streams:
 - Sentiment analysis using NLP models  
 - RAG-based retrieval system  
 
-➡️ Output: Context-aware market insights  
+   Output: Context-aware market insights  
 
 ---
 
@@ -67,13 +67,13 @@ Combines numerical + textual signals
 
 Produces:  
 
-- 📈 Price prediction  
-- 📊 Volatility estimation  
-- ⚠️ Risk score  
+-  Price prediction  
+-  Volatility estimation  
+-  Risk score  
 
 ---
 
-## 📊 Dataset  
+## Dataset  
 
 | Dataset               | Source                   | Size              | Date Range | Stocks / Scope                           | Usage                            |
 |----------------------|--------------------------|-------------------|------------|------------------------------------------|----------------------------------|
@@ -82,14 +82,14 @@ Produces:
 
 ---
 
-## 🔗 Data Sources  
+## Data Sources  
 
 - Stock Data: Yahoo Finance (yfinance)  
 - News Dataset: https://www.kaggle.com/datasets/hkapoor/indian-financial-news-articles-20032020  
 
 ---
 
-## 🤖 Models  
+## Models  
 
 | Model                         | Type          | Role                   | Status         | Metric                    |
 |------------------------------|---------------|------------------------|----------------|---------------------------|
@@ -100,7 +100,7 @@ Produces:
 
 ---
 
-## 🎯 Goals  
+## Goals  
 
 | Goal                            | Success Criteria               |
 |---------------------------------|------------------------------|
@@ -111,7 +111,7 @@ Produces:
 
 ---
 
-## 🔄 Pipeline  
+## Pipeline  
 
 ### 1. Data Ingestion  
 
@@ -119,7 +119,7 @@ Produces:
 - Load news dataset (50,000 articles)  
 - Parse and validate timestamps  
 
-📁 Output:
+   Output:
 ```
 data/raw/
 ```
@@ -144,7 +144,7 @@ Dataset split:
 - Validation: 2021–2022  
 - Test: 2023–2025  
 
-📁 Output:
+   Output:
 ```
 data/processed/
 ├── *_processed.csv
@@ -186,13 +186,13 @@ Input:
 
 Outputs:  
 
-- 📈 Predicted Price  
-- 📊 Volatility  
-- ⚠️ Risk Score  
+-  Predicted Price  
+-  Volatility  
+-  Risk Score  
 
 ---
 
-## 📊 Evaluation Metrics  
+## Evaluation Metrics  
 
 - RMSE (Root Mean Square Error)  
 - MAE (Mean Absolute Error)  
@@ -201,7 +201,7 @@ Outputs:
 
 ---
 
-## 🛠️ Tech Stack  
+## Tech Stack  
 
 **Language:**  
 - Python  
@@ -216,7 +216,7 @@ Outputs:
 
 ---
 
-## 📁 Project Structure  
+## Project Structure  
 
 ```
 ├── data/
@@ -241,7 +241,7 @@ Outputs:
 
 ---
 
-## 🚀 Future Work  
+## Future Work  
 
 - Real-time data integration  
 - Advanced Transformer models  
@@ -250,7 +250,7 @@ Outputs:
 
 ---
 
-## 📌 Conclusion  
+## Conclusion  
 
 This project demonstrates how combining:  
 
@@ -261,12 +261,12 @@ can improve forecasting performance and provide more meaningful financial insigh
 
 ---
 
-## 👨‍💻 Author  
+## Author  
 
-Mohd Raoof Ahmed Siddiqui,  
-Jash Kolsawala,  
-Bhilare Darshan Parvati,  
-Simhudu.  
+Mohd Raoof Ahmed Siddiqui(SE25MAID002),  
+Jash Kolsawala (SE25MAID007),  
+Bhilare Darshan Parvati (SE25MAID010),  
+Gadenaboyana Yagna Sree Sai Siva Simhudu (SE25MAID030).  
 
 ---
 
