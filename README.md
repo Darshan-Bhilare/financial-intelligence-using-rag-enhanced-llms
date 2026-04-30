@@ -170,7 +170,7 @@ can improve forecasting performance and provide more meaningful financial insigh
 
 👨‍💻 Author
 Mohd Raoof Ahmed Siddiqui,
-Jash Kolsevala,
+Jash Kolsawala,
 Darshan Bhilare,
 Simhudu.
 
