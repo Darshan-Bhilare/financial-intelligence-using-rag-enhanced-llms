@@ -171,7 +171,7 @@ can improve forecasting performance and provide more meaningful financial insigh
 👨‍💻 Author
 Mohd Raoof Ahmed Siddiqui,
 Jash Kolsawala,
-Darshan Bhilare,
+Bhilare Darshan Parvati,
 Simhudu.
 
 M.Tech Project — Generative AI
