@@ -13,20 +13,15 @@ On the other hand, Large Language Models (LLMs) can process textual data but may
 ✅ Proposed Solution
 
 This project combines:
-
 Time-series modeling (Transformer / LSTM)
 Retrieval-Augmented Generation (RAG)
-
 This ensures predictions are supported by:
-
 Historical price patterns
 Real financial news data
+
 🚀 Project Overview
-
 This project is a hybrid AI forecasting system built on 22 years of data (2003–2025) for 5 major NSE stocks.
-
 🔹 System Architecture
-
 The system integrates two main streams:
 
 1. Numerical Stream
@@ -166,19 +161,16 @@ Real-time data integration
 Advanced Transformer models
 Web dashboard (Streamlit / React)
 Deployment using FastAPI
+
 📌 Conclusion
-
 This project demonstrates how combining:
-
 Structured financial data
 Unstructured news data
-
 can improve forecasting performance and provide more meaningful financial insights.
 
 👨‍💻 Author
-
 Mohd Raoof Ahmed Siddiqui,
-Jash kolsevala
+Jash Kolsevala,
 Darshan Bhilare,
 Simhudu.
 
