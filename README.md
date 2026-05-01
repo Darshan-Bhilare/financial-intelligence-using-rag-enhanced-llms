@@ -90,23 +90,23 @@ Produces:
 
 ## Models  
 
-| Model                         | Type          | Role                   | Status         | Metric                    |
+| Model                        | Type         | Role                  | Status         | Metric                    |
 |------------------------------|---------------|------------------------|----------------|---------------------------|
-| ARIMA / Exponential Smoothing| Classical     | Baseline forecasting   | ✅ Completed   | ~51% Directional Accuracy |
-| LSTM / Transformer           | Deep Learning | Time-series prediction | 🔄 In Progress | Target > 62%              |
-| FinBERT (or NLP Model)       | NLP           | Sentiment analysis     | 🔄 In Progress | Sentiment accuracy        |
-| RAG (FAISS / ChromaDB)       | Retrieval     | Context grounding      | 🔄 In Progress | Retrieval relevance       |
+| ARIMA / Exponential Smoothing| Classical     | Baseline forecasting   |  Completed     | ~51% Directional Accuracy |
+| LSTM / Transformer           | Deep Learning | Time-series prediction |  In Progress   | Target > 62%              |
+| FinBERT (or NLP Model)       | NLP           | Sentiment analysis     |  In Progress   | Sentiment accuracy        |
+| RAG (FAISS / ChromaDB)       | Retrieval     | Context grounding      |  In Progress   | Retrieval relevance       |
 
 ---
 
 ## Goals  
 
 | Goal                            | Success Criteria               |
-|---------------------------------|------------------------------|
-| Improve prediction accuracy     | Directional Accuracy > 62%   |
-| Build context-aware forecasting | Combine price + news data    |
+|---------------------------------|--------------------------------|
+| Improve prediction accuracy     | Directional Accuracy > 62%     |
+| Build context-aware forecasting | Combine price + news data      |
 | Provide interpretable results   | Each prediction linked to news |
-| Deploy real-time system         | API response < 3 seconds     |
+| Deploy real-time system         | API response < 3 seconds       |
 
 ---
 
