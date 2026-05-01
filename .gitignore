@@ -1,0 +1,11 @@
+.env
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+*.egg-info/
+.ipynb_checkpoints/
+data/raw/*.csv
+data/raw/*.pdf
+*.db
+chroma_db/
