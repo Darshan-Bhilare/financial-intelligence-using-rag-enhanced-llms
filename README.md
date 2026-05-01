@@ -4,7 +4,7 @@
 
 ## Problem
 Indian banks and investors face hallucination-prone AI outputs with no cited evidence.
-This system grounds Gemini LLM with domain documents via RAG to produce explainable,
+This system grounds Ollama + LLaMA 3 LLM with domain documents via RAG to produce explainable,
 source-cited financial intelligence across three use cases.
 
 ## Use Cases
@@ -17,7 +17,7 @@ source-cited financial intelligence across three use cases.
 python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -r requirements.txt
-cp .env.example .env      # add your Gemini API key
+cp .env.example .env      
 ```
 
 ## Run
