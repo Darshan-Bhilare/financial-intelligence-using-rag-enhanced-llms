@@ -1,0 +1,10 @@
+use_case,mode,accuracy,correct,total
+UC1 Stock,no_rag,58.0,29,50
+UC1 Stock,top_3,52.0,26,50
+UC1 Stock,top_5,44.0,22,50
+UC2 Credit,no_rag,50.0,5,10
+UC2 Credit,top_3,66.67,6,9
+UC2 Credit,top_5,60.0,6,10
+UC3 Loan,no_rag,60.0,6,10
+UC3 Loan,top_3,50.0,5,10
+UC3 Loan,top_5,50.0,5,10
