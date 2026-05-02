@@ -93,7 +93,6 @@ def ingest_pdfs(collection):
         print(f"[PDF] {filename} — {len(chunks)} chunks ingested\n")
 
 # ── ingest: stock OHLCV ─────────────────────────────────────────────────────
-# ── ingest: stock OHLCV ─────────────────────────────────────────────────────
 def ingest_stocks(collection):
     tickers = ["TCS", "INFY", "ICICI", "HDFC", "RELIANCE"]
     chunks  = []
@@ -105,34 +104,30 @@ def ingest_stocks(collection):
             continue
 
         df = pd.read_csv(path)
-
-        # ✅ FIX: ensure date column exists
-        if "Date" not in df.columns and "date" not in df.columns:
-            df.reset_index(inplace=True)
-            df.rename(columns={"index": "date"}, inplace=True)
-
         df.columns = [c.strip().lower() for c in df.columns]
+
+        # ensure date column exists
+        if "date" not in df.columns:
+            print(f"  [WARN] No date column found in {ticker}, columns: {list(df.columns)}")
+            continue
 
         ticker_chunks = 0
         for _, row in df.iterrows():
             try:
-                # ✅ FIX: clean date formatting
-                date = str(row.get("date", "?")).split(" ")[0]
-
                 summary = (
-                    f"{ticker} stock on {date}: "
-                    f"Open={round(float(row.get('open', 0)), 2)}, "
-                    f"High={round(float(row.get('high', 0)), 2)}, "
-                    f"Low={round(float(row.get('low',  0)), 2)}, "
+                    f"{ticker} stock on {row['date']}: "
+                    f"Open={round(float(row.get('open',   0)), 2)}, "
+                    f"High={round(float(row.get('high',   0)), 2)}, "
+                    f"Low={round(float(row.get('low',     0)), 2)}, "
                     f"Close={round(float(row.get('close', 0)), 2)}, "
                     f"Volume={int(float(row.get('volume', 0)))}."
                 )
                 chunks.append({"text": summary, "source": f"{ticker}_stock"})
                 ticker_chunks += 1
-            except Exception:
+            except Exception as e:
                 continue
 
-        print(f"  → {ticker}: {ticker_chunks} rows")
+        print(f"  → {ticker}: {ticker_chunks} rows | sample: {df['date'].iloc[0]}")
 
     add_to_collection(collection, chunks, prefix="stock")
     print(f"[STOCK] Done — {len(chunks)} OHLCV summaries ingested\n")
