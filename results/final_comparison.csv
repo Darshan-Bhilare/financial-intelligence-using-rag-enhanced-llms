@@ -1,0 +1,4 @@
+use_case,rag_llm_acc,xgboost_acc,winner
+UC1 Stock,58.0,51.51,RAG-LLM
+UC2 Credit,66.67,92.86,XGBoost
+UC3 Loan,60.0,85.2,XGBoost
