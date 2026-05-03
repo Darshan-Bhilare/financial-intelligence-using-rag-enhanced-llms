@@ -23,7 +23,7 @@
 ### System Architecture
 
 ```
-![FinRAG Architecture](architecture.png)
+![FinRAG Architecture](architecture.jpg)
 ```
 
 ---
