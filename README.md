@@ -23,8 +23,9 @@
 ### System Architecture
 
 
-![FinRAG Architecture](assets/architecture.png)
-
+<p align="center">
+  <img src="[https://github.com/user-attachments/assets/152db180-c70d-4bcb-83c6-aeb80a5286d4](https://github.com/Darshan-Bhilare/financial-intelligence-using-rag-enhanced-llms/blob/feature/financial-intelligence-rag-llms/architecture.jpg)" width="700"/>
+</p>
 
 ---
 
