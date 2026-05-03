@@ -24,7 +24,7 @@
 
 
 <p align="center">
-  <img src="https://github.com/Darshan-Bhilare/financial-intelligence-using-rag-enhanced-llms/blob/feature/financial-intelligence-rag-llms/architecture.jpg" width="700"/>
+  <img src="https://github.com/Darshan-Bhilare/financial-intelligence-using-rag-enhanced-llms/blob/feature/financial-intelligence-rag-llms/architecture.jpg" width=500"/>
 </p>
 
 ---
