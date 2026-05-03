@@ -1,6 +1,5 @@
-# TriFin: Financial Intelligence using RAG-Enhanced LLMs
+## TriFin: Financial Intelligence using RAG-Enhanced LLMs
 ### A Unified Explainable GenAI System for Indian Banking & Finance
-> CS5202 — GenAI & LLM · Domain: Banking & Finance
 ---
 
 ## What Is This Project?
