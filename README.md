@@ -1,10 +1,10 @@
 ## TriFin: Financial Intelligence using RAG-Enhanced LLMs
-### A Unified Explainable GenAI System for Indian Banking & Finance
+#### A Unified Explainable GenAI System for Indian Banking & Finance
 ---
 
-### What Is This Project?
+#### Project Overview
 
-**Financial Intelligence using RAG-Enhanced LLMs** is a GenAI-first financial intelligence system that grounds LLaMA3 predictions in verified Indian financial documents using Retrieval-Augmented Generation (RAG). Unlike traditional ML models that output a number with no explanation, TriFin produces **cited, explainable predictions** for three high-stakes Indian finance use cases.
+**TriFin: Financial Intelligence using RAG-Enhanced LLMs** is a GenAI-first financial intelligence system that grounds LLaMA3 predictions in verified Indian financial documents using Retrieval-Augmented Generation (RAG). Unlike traditional ML models that output a number with no explanation, TriFin produces **cited, explainable predictions** for three high-stakes Indian finance use cases.
 
 | Use Case | Task | Data Source |
 |---|---|---|
@@ -12,45 +12,18 @@
 | Use Case 2 — Credit Risk / NPA | Assess bank NPA risk level (LOW/MEDIUM/HIGH) | RBI Financial Stability Reports |
 | Use Case 3 — Loan Default | Predict loan default risk with justification | Kaggle Give Me Some Credit |
 
-#### Why RAG instead of plain ML?
+#### RAG Over Traditional Machine Learning
 
-- XGBoost predicts a number. FinRAG explains **why**, citing the source.
-- Generic LLMs hallucinate. FinRAG is **grounded** in verified documents.
-- Regulators need auditability. FinRAG produces **RBI-cited reasoning** for every prediction.
+- XGBoost predicts a number. TriFin explains **why**, citing the source.
+- Generic LLMs hallucinate. TriFin is **grounded** in verified documents.
+- Regulators need auditability. TriFin produces **RBI-cited reasoning** for every prediction.
 
 ---
 
 ### System Architecture
 
 ```
-Data Sources
-├── Indian Financial News (HuggingFace — 26k articles)
-├── RBI FSR PDFs (Dec 2023 + Jun 2024)
-├── NIFTY-100 OHLCV (yFinance — 5 stocks, 738 days each)
-└── Give Me Some Credit (Kaggle — 150k loan records)
-         │
-         ▼
-Data Pipeline (src/data_pipeline.py)
-   Chunk (300 words) → Embed (all-MiniLM-L6-v2) → Store
-         │
-         ▼
-ChromaDB Vector Store (16,508 documents)
-         │
-         ▼
-RAG Retriever (src/rag_pipeline.py)
-   no_rag (k=0) | top_3 (k=3) | top_5 (k=5)  ← ablation variable
-         │
-         ▼
-LLaMA3 8B via Ollama (src/llm_client.py)
-   Grounded prompt → JSON output with source citations
-         │
-    ┌────┴────┬────┐
-   UC1       UC2  UC3
- Stock    Credit  Loan
-Predict    Risk  Default
-         │
-         ▼
-Ablation Study + XGBoost Baseline
+![FinRAG Architecture](architecture.png)
 ```
 
 ---
@@ -83,7 +56,7 @@ Hallucination rate = **0%** across all 210 LLM calls
 ### Repository Structure
 
 ```
-project-finrag-<rollno>/
+project-TriFin-<rollno>/
 │
 ├── README.md                     # This file
 ├── domain_note.pdf               # 1-page domain note (Milestone 1)
