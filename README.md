@@ -1,24 +1,17 @@
-# Financial Intelligence using RAG-Enhanced LLMs
-### A Unified Explainable AI System for Indian Banking & Finance
-> CS5202 — GenAI and LLM · Spring 2026 · Domain D: Indian Finance
-
-![Python](https://img.shields.io/badge/Python-3.14-blue?style=flat-square&logo=python)
-![LLaMA3](https://img.shields.io/badge/LLM-LLaMA3%208B-orange?style=flat-square)
-![ChromaDB](https://img.shields.io/badge/VectorDB-ChromaDB-green?style=flat-square)
-![Streamlit](https://img.shields.io/badge/UI-Streamlit-red?style=flat-square)
-![XGBoost](https://img.shields.io/badge/Baseline-XGBoost-yellow?style=flat-square)
-
+# TriFin: Financial Intelligence using RAG-Enhanced LLMs
+### A Unified Explainable GenAI System for Indian Banking & Finance
+> CS5202 — GenAI & LLM · Domain: Banking & Finance
 ---
 
 ## What Is This Project?
 
-**Financial Intelligence using RAG-Enhanced LLMs** is a GenAI-first financial intelligence system that grounds LLaMA3 predictions in verified Indian financial documents using Retrieval-Augmented Generation (RAG). Unlike traditional ML models that output a number with no explanation, FinRAG produces **cited, explainable predictions** for three high-stakes Indian finance use cases.
+**Financial Intelligence using RAG-Enhanced LLMs** is a GenAI-first financial intelligence system that grounds LLaMA3 predictions in verified Indian financial documents using Retrieval-Augmented Generation (RAG). Unlike traditional ML models that output a number with no explanation, TriFin produces **cited, explainable predictions** for three high-stakes Indian finance use cases.
 
 | Use Case | Task | Data Source |
 |---|---|---|
-| UC1 — Stock Prediction | Predict UP/DOWN direction for 5 NSE stocks | yFinance + Indian Financial News |
-| UC2 — Credit Risk / NPA | Assess bank NPA risk level (LOW/MEDIUM/HIGH) | RBI Financial Stability Reports |
-| UC3 — Loan Default | Predict loan default risk with justification | Kaggle Give Me Some Credit |
+| Use Case 1 — Stock Prediction | Predict UP/DOWN direction for 5 NSE stocks | yFinance + Indian Financial News |
+| Use Case 2 — Credit Risk / NPA | Assess bank NPA risk level (LOW/MEDIUM/HIGH) | RBI Financial Stability Reports |
+| Use Case 3 — Loan Default | Predict loan default risk with justification | Kaggle Give Me Some Credit |
 
 ### Why RAG instead of plain ML?
 
@@ -69,12 +62,12 @@ Ablation Study + XGBoost Baseline
 
 | Use Case | no_rag | top_3 | top_5 |
 |---|---|---|---|
-| UC1 — Stock | **58.0%** | 52.0% | 44.0% |
-| UC2 — Credit Risk | 50.0% | **66.67%** | 60.0% |
-| UC3 — Loan Default | **60.0%** | 50.0% | 50.0% |
+| Use Case 1 — Stock | **58.0%** | 52.0% | 44.0% |
+| Use Case 2 — Credit Risk | 50.0% | **66.67%** | 60.0% |
+| Use Case 3 — Loan Default | **60.0%** | 50.0% | 50.0% |
 | Average | 56.0% | 56.22% | 51.33% |
 
-★ = best mode per use case | Hallucination rate = **0%** across all 210 LLM calls
+Hallucination rate = **0%** across all 210 LLM calls
 
 ### RAG-LLM vs XGBoost Baseline
 
@@ -158,8 +151,8 @@ Before you begin, make sure you have:
 ### Step 1 — Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/project-finrag-ROLLNO.git
-cd project-finrag-ROLLNO
+git clone https://github.com/Darshan-Bhilare/financial-intelligence-using-rag-enhanced-llms.git
+cd financial-intelligence-using-rag-enhanced-llms
 ```
 
 ---
@@ -231,37 +224,12 @@ Download these two PDFs and save them to `data/raw/`:
 python data/verify_data.py
 ```
 
-Expected output:
-```
-[OK] TCS stock:      738 rows x 6 cols
-[OK] INFY stock:     738 rows x 6 cols
-[OK] ICICI stock:    738 rows x 6 cols
-[OK] HDFC stock:     738 rows x 6 cols
-[OK] Reliance stock: 738 rows x 6 cols
-[OK] Financial news: 26961 rows x 4 cols
-[OK] Loan default:   150000 rows x 11 cols
-[OK] RBI_FSR_Dec2023.pdf: XXXX KB
-[OK] RBI_FSR_Jun2024.pdf: XXXX KB
-```
-
 ---
 
 ### Step 5 — Ingest all documents into ChromaDB
 
 ```bash
 python src/data_pipeline.py
-```
-
-Expected output:
-```
-=== FinRAG Data Pipeline ===
-[NEWS] Column='Content' · Rows=3000
-[NEWS] Done — 7812 chunks ingested
-[PDF] RBI_FSR_Dec2023.pdf — 3 chunks ingested
-[PDF] RBI_FSR_Jun2024.pdf — 3 chunks ingested
-[STOCK] Done — 3690 OHLCV summaries ingested
-[LOAN] Done — 5000 loan summaries ingested
-DONE — Total docs in ChromaDB: 16508
 ```
 
 > This step downloads the embedding model (~90MB) on first run. Subsequent runs are instant.
@@ -273,14 +241,11 @@ DONE — Total docs in ChromaDB: 16508
 ```bash
 python src/rag_pipeline.py
 ```
-
-Expected output: 4 test queries — 3 return chunks with source citations, 1 (no_rag) returns empty context.
-
 ---
 
 ### Step 7 — Run the three use cases
 
-> ⚠️ Each script makes LLM calls via Ollama. Runtime: ~15–30 min per script on CPU.
+>  Each script makes LLM calls via Ollama. Runtime: ~15–30 min per script on CPU.
 
 **Use Case 1 — Stock Direction Prediction**
 ```bash
@@ -332,7 +297,7 @@ streamlit run src/app.py
 Opens at **http://localhost:8501**
 
 Features:
-- Select UC1 / UC2 / UC3 from sidebar
+- Select Use Case from sidebar
 - Toggle RAG mode: no_rag / top_3 / top_5
 - Enter custom inputs (stock prices, bank metrics, borrower profile)
 - See prediction, confidence, reasoning, and cited sources in real time
@@ -390,10 +355,8 @@ After running all scripts, `results/` will contain:
 
 | Field | Details |
 |---|---|
-| Course | CS5202 — GenAI and LLM |
-| Domain | D — Indian Finance |
-| Milestone 1 | April 30, 2026 — domain note + pipeline running |
-| Final Evaluation | May 15, 2026 — complete system + report + live demo |
+| Course | CS5202 — GenAI & LLM |
+| Domain | Banking & Finance |
 | LLM | LLaMA 3 8B via Ollama (local, free) |
 | Vector Store | ChromaDB 1.5.8 (persistent local) |
 | Embeddings | all-MiniLM-L6-v2 (sentence-transformers) |
@@ -402,4 +365,4 @@ After running all scripts, `results/` will contain:
 
 ---
 
-*CS5202 · Spring 2026 · Department of CS & AI · Domain D — Indian Finance*
+*CS5202 - GenAI & LLM · M.Tech(Artificial Intelligence and Data Science) · Domain - Banking & Finance*
