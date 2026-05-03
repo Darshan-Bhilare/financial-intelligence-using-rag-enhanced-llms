@@ -338,4 +338,14 @@ After running all scripts, `results/` will contain:
 
 ---
 
+### Team Details
+
+**Team Number: 36**
+
+**Team Members:**
+- Bhilare Darshan Parvati (SE25MAID010)
+- Jash Kolsawala (SE25MAID007)
+- Gadenaboyana Yagna Sree Sai Siva Simhudu (SE25MAID030)  
+- Mohd Raoof Ahmed Siddiqui (SE25MAID002) 
+
 *CS5202 - GenAI & LLM · M.Tech(Artificial Intelligence and Data Science) · Domain - Banking & Finance*
