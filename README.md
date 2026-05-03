@@ -2,7 +2,7 @@
 ### A Unified Explainable GenAI System for Indian Banking & Finance
 ---
 
-## What Is This Project?
+### What Is This Project?
 
 **Financial Intelligence using RAG-Enhanced LLMs** is a GenAI-first financial intelligence system that grounds LLaMA3 predictions in verified Indian financial documents using Retrieval-Augmented Generation (RAG). Unlike traditional ML models that output a number with no explanation, TriFin produces **cited, explainable predictions** for three high-stakes Indian finance use cases.
 
@@ -12,7 +12,7 @@
 | Use Case 2 — Credit Risk / NPA | Assess bank NPA risk level (LOW/MEDIUM/HIGH) | RBI Financial Stability Reports |
 | Use Case 3 — Loan Default | Predict loan default risk with justification | Kaggle Give Me Some Credit |
 
-### Why RAG instead of plain ML?
+#### Why RAG instead of plain ML?
 
 - XGBoost predicts a number. FinRAG explains **why**, citing the source.
 - Generic LLMs hallucinate. FinRAG is **grounded** in verified documents.
@@ -20,7 +20,7 @@
 
 ---
 
-## System Architecture
+### System Architecture
 
 ```
 Data Sources
@@ -55,9 +55,9 @@ Ablation Study + XGBoost Baseline
 
 ---
 
-## Key Results
+### Key Results
 
-### Ablation Study — RAG Mode vs Accuracy
+#### Ablation Study — RAG Mode vs Accuracy
 
 | Use Case | no_rag | top_3 | top_5 |
 |---|---|---|---|
@@ -68,7 +68,7 @@ Ablation Study + XGBoost Baseline
 
 Hallucination rate = **0%** across all 210 LLM calls
 
-### RAG-LLM vs XGBoost Baseline
+#### RAG-LLM vs XGBoost Baseline
 
 | Use Case | RAG-LLM Best | XGBoost | Winner |
 |---|---|---|---|
@@ -80,7 +80,7 @@ Hallucination rate = **0%** across all 210 LLM calls
 
 ---
 
-## Repository Structure
+### Repository Structure
 
 ```
 project-finrag-<rollno>/
@@ -133,7 +133,7 @@ project-finrag-<rollno>/
 
 ---
 
-## Prerequisites
+### Prerequisites
 
 Before you begin, make sure you have:
 
@@ -145,9 +145,9 @@ Before you begin, make sure you have:
 
 ---
 
-## Steps to Reproduce
+### Steps to Reproduce
 
-### Step 1 — Clone the repository
+#### Step 1 — Clone the repository
 
 ```bash
 git clone https://github.com/Darshan-Bhilare/financial-intelligence-using-rag-enhanced-llms.git
@@ -156,7 +156,7 @@ cd financial-intelligence-using-rag-enhanced-llms
 
 ---
 
-### Step 2 — Set up Python virtual environment
+#### Step 2 — Set up Python virtual environment
 
 ```bash
 # Create virtual environment
@@ -174,7 +174,7 @@ pip install -r requirements.txt
 
 ---
 
-### Step 3 — Install Ollama and pull LLaMA3
+#### Step 3 — Install Ollama and pull LLaMA3
 
 ```bash
 # Download and install Ollama from https://ollama.com/download
@@ -189,7 +189,7 @@ ollama run llama3 "Say hello"
 
 ---
 
-### Step 4 — Download all datasets
+#### Step 4 — Download all datasets
 
 **4a. Stock price data (automated)**
 ```bash
@@ -225,7 +225,7 @@ python data/verify_data.py
 
 ---
 
-### Step 5 — Ingest all documents into ChromaDB
+#### Step 5 — Ingest all documents into ChromaDB
 
 ```bash
 python src/data_pipeline.py
@@ -235,14 +235,14 @@ python src/data_pipeline.py
 
 ---
 
-### Step 6 — Verify RAG retrieval is working
+#### Step 6 — Verify RAG retrieval is working
 
 ```bash
 python src/rag_pipeline.py
 ```
 ---
 
-### Step 7 — Run the three use cases
+#### Step 7 — Run the three use cases
 
 >  Each script makes LLM calls via Ollama. Runtime: ~15–30 min per script on CPU.
 
@@ -263,7 +263,7 @@ python src/uc3_loan.py
 
 ---
 
-### Step 8 — Run ablation study
+#### Step 8 — Run ablation study
 
 ```bash
 python src/ablation.py
@@ -276,7 +276,7 @@ Produces:
 
 ---
 
-### Step 9 — Run XGBoost baseline comparison
+#### Step 9 — Run XGBoost baseline comparison
 
 ```bash
 python src/baseline_ml.py
@@ -287,7 +287,7 @@ Results saved to `results/final_comparison.csv`.
 
 ---
 
-### Step 10 — Launch the Streamlit web UI
+#### Step 10 — Launch the Streamlit web UI
 
 ```bash
 streamlit run src/app.py
@@ -304,7 +304,7 @@ Features:
 
 ---
 
-## Results Summary
+### Results Summary
 
 After running all scripts, `results/` will contain:
 
@@ -323,7 +323,7 @@ After running all scripts, `results/` will contain:
 
 ---
 
-## Troubleshooting
+### Troubleshooting
 
 | Problem | Fix |
 |---|---|
@@ -337,7 +337,7 @@ After running all scripts, `results/` will contain:
 
 ---
 
-## References
+### References
 
 1. Lewis et al. (2020) — Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks. NeurIPS. https://arxiv.org/abs/2005.11401
 2. Ji et al. (2023) — Survey of Hallucination in Natural Language Generation. ACM Computing Surveys. https://arxiv.org/abs/2202.03629
@@ -350,7 +350,7 @@ After running all scripts, `results/` will contain:
 
 ---
 
-## Project Info
+### Project Info
 
 | Field | Details |
 |---|---|
