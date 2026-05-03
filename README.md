@@ -6,11 +6,11 @@
 
 **TriFin: Financial Intelligence using RAG-Enhanced LLMs** is a GenAI-first financial intelligence system that grounds LLaMA3 predictions in verified Indian financial documents using Retrieval-Augmented Generation (RAG). Unlike traditional ML models that output a number with no explanation, TriFin produces **cited, explainable predictions** for three high-stakes Indian finance use cases.
 
-### | Use Case | Task | Data Source |
-### |---|---|---|
-### | Use Case 1 — Stock Prediction | Predict UP/DOWN direction for 5 NSE stocks | yFinance + Indian Financial News |
-### | Use Case 2 — Credit Risk / NPA | Assess bank NPA risk level (LOW/MEDIUM/HIGH) | RBI Financial Stability Reports |
-### | Use Case 3 — Loan Default | Predict loan default risk with justification | Kaggle Give Me Some Credit |
+ | Use Case | Task | Data Source |
+ |---|---|---|
+ | Use Case 1 — Stock Prediction | Predict UP/DOWN direction for 5 NSE stocks | yFinance + Indian Financial News |
+ | Use Case 2 — Credit Risk / NPA | Assess bank NPA risk level (LOW/MEDIUM/HIGH) | RBI Financial Stability Reports |
+ | Use Case 3 — Loan Default | Predict loan default risk with justification | Kaggle Give Me Some Credit |
 
 ### RAG Over Traditional Machine Learning
 
