@@ -23,7 +23,7 @@
 ### System Architecture
 
 ```
-![FinRAG Architecture](architecture.jpg)
+<img width="2481" height="3509" alt="image" src="https://github.com/user-attachments/assets/cc1dc42d-ac55-482f-9208-1c8de296a916" />
 ```
 
 ---
